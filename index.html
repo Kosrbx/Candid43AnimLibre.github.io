@@ -1,0 +1,207 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: transparent; }
+.page {
+  font-family: 'Courier New', monospace;
+  background: var(--color-background-primary);
+  border: 2px solid #1a1a1a;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0;
+  color: var(--color-text-primary);
+}
+.top-bar {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  padding: 8px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+}
+.top-bar .logo { font-size: 13px; font-weight: bold; color: #fff; letter-spacing: 0.2em; }
+.clearance-badge {
+  background: #b30000;
+  color: #fff;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 3px 10px;
+  letter-spacing: 0.15em;
+}
+.header-section {
+  border-bottom: 2px solid var(--color-border-primary);
+  padding: 16px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.scp-number-box {
+  border: 2px solid var(--color-border-primary);
+  padding: 8px 14px;
+  text-align: center;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+.scp-number-box .num { font-size: 22px; font-weight: bold; color: var(--color-text-primary); letter-spacing: 0.05em; }
+.scp-number-box .sub { font-size: 10px; color: var(--color-text-secondary); letter-spacing: 0.1em; margin-top: 2px; }
+.header-meta { flex: 1; }
+.meta-row { display: flex; gap: 6px; font-size: 12px; margin-bottom: 5px; }
+.meta-label { color: var(--color-text-tertiary); min-width: 110px; letter-spacing: 0.05em; }
+.meta-val { color: var(--color-text-primary); font-weight: bold; }
+.class-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 10px;
+  letter-spacing: 0.12em;
+  background: #b30000;
+  color: #fff;
+  margin-top: 4px;
+}
+.redacted {
+  display: inline-block;
+  background: var(--color-text-primary);
+  color: var(--color-text-primary);
+  letter-spacing: 0.05em;
+  user-select: none;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 2px;
+  padding: 0 2px;
+}
+.redacted.revealed {
+  background: #FAEEDA;
+  color: #633806;
+}
+.section {
+  border-top: 1px solid var(--color-border-tertiary);
+  padding: 14px 20px;
+}
+.section-title {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-tertiary);
+  padding-bottom: 5px;
+}
+.body-text {
+  font-size: 13px;
+  color: var(--color-text-primary);
+  line-height: 1.75;
+}
+.anomaly-table { width: 100%; font-size: 12px; border-collapse: collapse; }
+.anomaly-table td { padding: 5px 8px; border: 0.5px solid var(--color-border-tertiary); vertical-align: top; }
+.anomaly-table td:first-child { color: var(--color-text-secondary); width: 38%; letter-spacing: 0.05em; }
+.anomaly-table td:last-child { color: var(--color-text-primary); }
+.event-block {
+  background: var(--color-background-secondary);
+  border-left: 3px solid #b30000;
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  border-radius: 0;
+}
+.event-block .ev-title { font-weight: bold; font-size: 11px; letter-spacing: 0.1em; color: var(--color-text-secondary); margin-bottom: 4px; }
+.note-box {
+  border: 1px dashed var(--color-border-secondary);
+  padding: 12px 16px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-top: 6px;
+}
+.footer-bar {
+  background: #1a1a1a;
+  color: #888;
+  font-size: 10px;
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.1em;
+}
+.hint { font-size: 11px; color: var(--color-text-tertiary); margin-top: 10px; font-style: italic; letter-spacing: 0.03em; }
+</style>
+
+<div class="page">
+
+  <div class="top-bar">
+    <span class="logo">FONDATION SCP</span>
+    <span style="letter-spacing:0.1em;">DOCUMENT CONFIDENTIEL — USAGE INTERNE</span>
+    <span class="clearance-badge">ACCREDITATION. 4</span>
+  </div>
+
+  <div class="header-section">
+    <div class="scp-number-box">
+      <div class="num">ANIMATION</div>
+      <div class="sub">SITE-43</div>
+      <div style="margin-top:8px;"><span class="class-badge">CANDIDATURE SPONTANNEE</span></div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-row"><span class="meta-label">DÉSIGNATION :</span><span class="meta-val"><span class="redacted" onclick="this.classList.toggle('revealed')">Isillion</span></span></div>
+      <div class="meta-row"><span class="meta-label">CLASSE :</span><span class="meta-val">Animation</span></div>
+      <div class="meta-row"><span class="meta-label">STATUT :</span><span class="meta-val" style="color:#b30000;">EN COURS D'ÉVALUATION</span></div>
+      <div class="meta-row"><span class="meta-label">DATE DE DÉPÔT :</span><span class="meta-val">30/03/2026</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">I — DESCRIPTION DE L'ANOMALIE</div>
+    <p class="body-text">
+      Isillion est un individu, âgé de 16 ans, présentant des capacités inhabituelles d'organisation et de stimulation communautaire. L'entité a été observée sur plusieurs plateformes RP Roblox ainsi que sur des serveurs Discord, où elle manifeste une tendance spontanée à créer des événements collectifs et à fédérer des joueurs autour d'activités ludiques.
+      <br><br>
+      Contrairement aux sujets ordinaires, Isillion génère autour de lui un effet mesurable d'engagement et de participation. Les individus exposés à son champ d'influence rapportent une augmentation notable de leur motivation à participer aux événements du serveur.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">II — RAPPORT DE CONFINEMENT — PROFIL OPÉRATIONNEL</div>
+    <table class="anomaly-table">
+      <tr><td>EXPÉRIENCE TERRAIN</td><td>Participation active à l'organisation d'événements Discord (un peu sur Roblox). Niveau débutant.</td></tr>
+      <tr><td>CAPACITÉS CRÉATIVES</td><td>Aptitude avérée à concevoir des formats d'événements originaux et à adapter le contenu à l'univers de Site-43 et du serveur.</td></tr>
+      <tr><td>CONNAISSANCE DU TERRAIN</td><td>Joueur actif sur le jeu et sur Discord avec quelques connaissances des goûts de la communauté et de ses attentes.</td></tr>
+      <tr><td>COMPORTEMENT EN ÉQUIPE</td><td>Coopératif. Aucune anomalie hostile détectée. Compatible avec les équipes existantes.</td></tr>
+      <tr><td>DISPONIBILITÉ</td><td>Régulière. Présence confirmée le week-end ainsi que les semaines lorsqu'il est en vacances.</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">III — INCIDENTS NOTABLES — IDÉES D'ÉVÉNEMENTS PROPOSÉES</div>
+
+    <div class="event-block">
+      <div class="ev-title">INCIDENT ANI-01 — "OPÉRATION CONFINEMENT FESTIF"</div>
+      Un événement scénarisé où les joueurs doivent collaborer pour contenir une "brèche" fictive sur le jeu. Chaque rôles a son importance. Ambiance immersive, tension narrative, amusement à la clé.
+    </div>
+
+    <div class="event-block">
+      <div class="ev-title">INCIDENT ANI-02 — "CHASSE AUX ANOMALIES"</div>
+      Chasse au trésor communautaire : des indices sont cachés à travers Discord. Les équipes s'affrontent pour localiser l'"anomalie" en premier. Permet à la communauté du serveur de s'amuser collectivement.
+    </div>
+
+
+    <div class="event-block">
+      <div class="ev-title">INCIDENT ANI-03 — "TRIBUNAL DE LA FONDATION"</div>
+      Événement RP participatif : un "procès" fictif impliquant des personnages du serveur, avec des joueurs dans les rôles de témoins, d'accusés et de jury. Favorise l'implication narrative et l'improvisation.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">IV — NOTE DU CHERCHEUR PRINCIPAL</div>
+    <div class="note-box">
+      "Isillion représente un atout opérationnel rare : une entité naturellement orientée vers le collectif, dotée d'une énergie créative stable et d'une connaissance terrain de la communauté cible. Sa classification 'débutant' ne reflète pas un manque de capacité, mais un potentiel encore partiellement inexploité."
+      <br><br>
+      — Dr. <span class="redacted" onclick="this.classList.toggle('revealed')">De Beauvoir</span>, Site-43
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>SCP FOUNDATION — SITE-43</span>
+    <span>DOCUMENT ANI-S43-2026</span>
+    <span>NE PAS DISTRIBUER</span>
+  </div>
+
+</div>
